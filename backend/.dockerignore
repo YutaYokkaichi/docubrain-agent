@@ -1,0 +1,30 @@
+Git
+
+.git
+.gitignore
+
+Python Cache
+
+pycache
+*.pyc
+*.pyo
+*.pyd
+
+Poetry / Virtual Environment
+
+.venv
+
+pyproject.toml と poetry.lock は Dockerfile で COPY するため除外してはいけません
+
+Environment Variables (Secrets)
+
+.env
+
+Docker
+
+Dockerfile
+.dockerignore
+
+OS Files
+
+.DS_Store

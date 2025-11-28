@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # Backend Service (FastAPI)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: docubrain-backend
+    # ホットリロード設定
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      # コードディレクトリのみをマウントし、/app/deps (ライブラリ) を守る
+      - ./backend/app:/app/app
+    ports:
+      - "8000:8000"
+    # 環境変数をファイルから読み込む
+    env_file:
+      - .env
+    # Qdrantへの依存関係
+    depends_on:
+      - qdrant
+
+  # Vector DB Service (Qdrant)
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: docubrain-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  qdrant_data:
