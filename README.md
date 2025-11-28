@@ -18,13 +18,9 @@
 
 ## デモ
 
-![Chat Interface](./docs/screenshot-main.png)
+**🚀 Live Demo**: [https://docubrain-prod-ae29a.web.app/](https://docubrain-prod-ae29a.web.app/)
 
-*ChatGPTライクな直感的なインターフェース - サイドバーで複数のチャット履歴を管理*
-
-![AI Response with Sources](./docs/screenshot-sources.png)
-
-*AIが自律的にツールを選択し、根拠となるドキュメントを引用しながら回答*
+実際に動作しているアプリケーションをお試しください！ChatGPTライクなインターフェースで、AIエージェントの自律的なツール選択と、根拠に基づいた回答生成を体験できます。
 
 ---
 
@@ -392,7 +388,7 @@ useEffect(() => {
 
 ---
 
-### �🏗️ 5. フルスタック実装
+### ��️ 5. フルスタック実装
 
 **課題**: フロントエンドからインフラまで一貫した設計・構築
 
